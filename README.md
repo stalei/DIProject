@@ -1,0 +1,2 @@
+# DIProject
+Simple toy model
