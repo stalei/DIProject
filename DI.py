@@ -5,9 +5,6 @@
 # ## Shahram Talei- University of Alabama
 
 # This is a simple toy model to study ....
-#
-
-# In[1]:
 
 
 #  © Shahram Talei @ 2020 The University of Alabama
@@ -15,9 +12,7 @@
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation; either version 3 of the License, or
 #(at your option) any later version.
-#You should have received a copy of the GNU General Public License
-#along with this program.  If not, see <http://www.gnu.org/licenses/>.
-# This code is distributed as is and there is no warranty or technical support
+
 
 import csv
 import urllib.request
@@ -54,11 +49,7 @@ totEachDay=[0]*daycount
 OpeningGrowth=[0,0,0]
 Week2Growth=[0,0,0]
 week2Increase=[0,0,0]
-#Numbers we may consider
 
-HospitalBeds=924107 #https://www.washingtonpost.com/business/2020/03/14/hospital-doctors-patients-coronavirus/
-Ventilators=160000 #http://www.centerforhealthsecurity.org/resources/COVID-19/200214-VentilatorAvailability-factsheet.pdf
-#reference of these numbers:
 #
 plt.rcParams["font.size"] =13
 
@@ -72,12 +63,7 @@ ax1.set_ylabel('Log(N)')
 ax1.set_xlim(daycount-1, -3)
 ax1.title.set_text('Confirmed')
 ax1.grid(True)
-#ax2 = fig1.add_subplot(222)
-#ax2.set_xlabel('days ago')
-#ax2.set_ylabel('Log(N)')
-#ax2.set_xlim(daycount-1, -3)
-#ax2.title.set_text('Recovered')
-#ax2.grid(True)
+
 ax3 = fig1.add_subplot(222)
 #ax3.set_xlabel('days ago')
 ax3.set_ylabel('Log(N)')
@@ -93,11 +79,7 @@ ax4.axhspan(1, 10, alpha=0.15, color='red')
 ax4.axhspan(-2, 1, alpha=0.15, color='green')
 
 ax4.grid(True)
-#ax5 = fig1.add_subplot(235)
-#ax5.set_xlabel('days ago')
-#ax5.set_ylabel('Recovery ratio')
-#ax5.set_xlim(daycount-1, -3)
-#ax5.grid(True)
+
 ax6 = fig1.add_subplot(224)
 ax6.set_xlabel('days ago')
 ax6.set_ylabel('Death ratio')
@@ -110,8 +92,6 @@ g1=[1]*daycount
 #ax4.plot(daysaxis,g1,'b',linestyle=':',label="Inflection Point")
 ax4.hlines(y=1,xmin=daycount, xmax=-3,color='k',linestyle='-.',label="Inflection Point")
 
-
-# In[11]:
 fig2 = plt.figure(figsize=plt.figaspect(1))
 fig2.suptitle('COVID-19 - Increase in two weeks after reopening ')
 ax21 = fig2.add_subplot(111)
@@ -168,9 +148,6 @@ for state in StatesList:
         GrowthFactorAll[n]=GrowthFactor
         ##
         #print(ReopeningDate[j])
-        #print(ReopeningDate[j]==dayRev)
-        #print(dayRev)
-        #if dayRev==ReopeningDate[j]:
         w2=ReopeningDate[j]+15
         if ReopeningDate[j]==n:
             print("got the day")
@@ -180,7 +157,6 @@ for state in StatesList:
             #print(GrowthFactorAll[n])
             OpeningGrowth[j]=GrowthFactor
             t1=totConf
-        #elif dayRev==ReopeningDate[j]+datetime.timedelta(days=15):
         elif w2==n:# n>w2 and n<w2+7: #w2==n:
             print("got the w2 day")
             #print(w2)
@@ -196,11 +172,8 @@ for state in StatesList:
     #print(GrowthFactor)
     GrowthFactorAll2=GrowthFactorAll[1:daycount+2]
     ax1.plot(daysaxis,np.log10(totConfirmed),'+',label=str(state))
-    #ax2.plot(daysaxis,np.log10(totRecovered),'o',label=str(state))
     ax3.plot(daysaxis,np.log10(totDeath),'x',label=str(state))
     ax4.plot(daysaxis_1,GrowthFactorAll2,linestyle='-',label=str(state)+'='+str(round(GrowthFactor,2)))
-    #ax4.annotate('latest('+str(country)+'):'+str(round(GrowthFactor,2)),xy=(daycount-2,GrowthFactor-2.5))
-    #ax5.plot(daysaxis,np.divide(totRecovered,totConfirmed),linestyle='-',label=str(state))
     ax6.plot(daysaxis,np.divide(totDeath,totConfirmed),linestyle='-',label=str(state))
 
 ##let's fit a function:
@@ -212,9 +185,6 @@ d,m = parameters
 
 ax21.plot(OpeningGrowth,week2Increase,'o',label='Data')
 ax21.plot(OpeningGrowth,fit(OpeningGrowth,d,m),'r',label='Fit')
-#for i,j in zip(daysaxis,GrowthFactorAll):
-#    if j>0.9 and j<1.1:
-#        ax4.annotate(str(round(j,2)),xy=(i+0.1,j+0.5))
 ax1.legend(loc=4)
 #ax2.legend(loc=4)
 ax3.legend(loc=4)
@@ -222,11 +192,7 @@ ax4.legend(loc=1)
 #ax5.legend(loc=1)
 ax6.legend(loc=1)
 ax21.legend(loc=2)
-#print("test print:")
-#print(OpeningGrowth)
-#print(Week2Growth)
 plt.show()
-#print(countries)
 
 g_in =float(input("Enter an opening growth rate to see the prediction: "))
 prediction=int(fit(g_in,d,m))
