@@ -23,6 +23,7 @@ import io
 import datetime
 from scipy.optimize import minimize
 from scipy.optimize import curve_fit
+import pandas as pd
 
 def fit(variables,d,m):
 	g=variables
@@ -71,6 +72,7 @@ ax3.set_xlim(daycount-1, -3)
 ax3.title.set_text('Deaths')
 ax3.grid(True)
 ax4 = fig1.add_subplot(223)
+ax4.title.set_text('State-Last growth- 7 day corrolation')
 ax4.set_xlabel('days ago')
 ax4.set_ylabel('Growth factor')
 ax4.set_xlim(daycount-2, -3)
@@ -171,9 +173,11 @@ for state in StatesList:
     j+=1
     #print(GrowthFactor)
     GrowthFactorAll2=GrowthFactorAll[1:daycount+2]
+    ser = pd.Series(GrowthFactorAll2)
+    corr=ser.autocorr(lag=7)
     ax1.plot(daysaxis,np.log10(totConfirmed),'+',label=str(state))
     ax3.plot(daysaxis,np.log10(totDeath),'x',label=str(state))
-    ax4.plot(daysaxis_1,GrowthFactorAll2,linestyle='-',label=str(state)+'='+str(round(GrowthFactor,2)))
+    ax4.plot(daysaxis_1,GrowthFactorAll2,linestyle='-',label=str(state)+'='+str(round(GrowthFactor,2))+','+str(round(corr,2)))
     ax6.plot(daysaxis,np.divide(totDeath,totConfirmed),linestyle='-',label=str(state))
 
 ##let's fit a function:
