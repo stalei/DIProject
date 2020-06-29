@@ -13,7 +13,6 @@
 #the Free Software Foundation; either version 3 of the License, or
 #(at your option) any later version.
 
-
 import csv
 import urllib.request
 from datetime import timedelta, date
