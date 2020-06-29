@@ -20,10 +20,13 @@ In the next step we can fit a function on this data and predict the surge rate a
 ![alt text](https://github.com/stalei/DIProject/blob/master/Fit.png?raw=true)
 (Surge vs Reopening Growth Factor)
 
-fit parameters:
-[-19861.12495688  22312.70488886]
-Enter an opening growth rate to see the prediction: 1.13
-Increase prediction is:5352
+    fit parameters:
+    
+    [-19861.12495688  22312.70488886]
+    
+    Enter an opening growth rate to see the prediction: 1.13
+    
+    Increase prediction is:5352
 
 
 
