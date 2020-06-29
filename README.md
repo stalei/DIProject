@@ -18,7 +18,10 @@ But more important I plot growth factor change for all these states and we can c
 In the next step we can fit a function on this data and predict the surge rate as a function of the growth factor at the time of reopening. This function could help us predict the increase for a new state given their growth factor. And finally this code will ask for a growth factor and will provide the increase two weeks after reopening.
 
 ![alt text](https://github.com/stalei/DIProject/blob/master/Fit.png?raw=true)
+
 (Surge vs Reopening Growth Factor)
+
+Sample output:
 
     fit parameters:
     
