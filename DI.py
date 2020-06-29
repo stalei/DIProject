@@ -96,7 +96,7 @@ ax4.hlines(y=1,xmin=daycount, xmax=-3,color='k',linestyle='-.',label="Inflection
 fig2 = plt.figure(figsize=plt.figaspect(1))
 fig2.suptitle('COVID-19 - Increase in two weeks after reopening ')
 ax21 = fig2.add_subplot(111)
-ax21.set_ylabel('two week increase')
+ax21.set_ylabel('Increase two weeks after reopening')
 ax21.set_xlabel('Reopening growth factor')
 ax21.title.set_text('GrowthFactor')
 ax21.grid(True)
