@@ -4,6 +4,7 @@
 
 (Surge vs Reopening Growth Factor)
 
+I plot the number of new cases two weeks after reopening as a function the growth factor at reopening.
 In the next step we can fit a function on this data and predict the surge rate as a function of the growth factor at the time of reopening. 
 This function could help us predict the increase for a new state given their growth factor. And finally this code will ask for a growth factor 
 and will provide the increase two weeks after reopening.
