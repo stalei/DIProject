@@ -14,13 +14,17 @@ In the next step I extract the growth factor(GF). GF is defined as the change to
 Using this number we can study the pattern and in a long time we can perform a time series analysis. For example we can study the surge based on the growth factor at the time of reopening. I extract the growth factor then following the data I look at the number of new cases after two weeks from reopening. 
 But more important I plot growth factor change for all these states and we can compare it with the inflection point. I put the last growth factor in the legend. I was also interested to see if there is a weekly correlation in growth rate and I calculate autocorrelation of the growth factor. For these test states this correlation is very weak. Reopening time are taken from NYTimes reoprt:
 [https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html!](https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html)
+
 In the next step we can fit a function on this data and predict the surge rate as a function of the growth factor at the time of reopening. This function could help us predict the increase for a new state given their growth factor. And finally this code will ask for a growth factor and will provide the increase two weeks after reopening.
 
-![alt text](https://github.com/stalei/DIProject/blob/master/DataExtract2.png?raw=true)
+![alt text](https://github.com/stalei/DIProject/blob/master/Fit2.png?raw=true)
 (Surge vs Reopening Growth Factor)
 
 
 This would be more challenging and more accurate if I include more states and in a real analysis we have to include more parameters however given the short time of the challenge and starting from scratch the result is very exciting and being an open source tool will let other people to reproduce the results and study more data.
+
+If I get a chance I would like to include model selection (minimum parameters using stepwise selection) and regularization and finally include unsupervised analysis (neural networks,...) for more accurate predictions.
+
 The code is written in a flexible way to include any list and fitting part is easy to change to any function. Basic python libraries + numpy + scipy + pandas + csv are required for the analysis.
 
 Stay safe!
