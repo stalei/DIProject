@@ -10,7 +10,7 @@ Then add them together and plot the general trend for a given list of states. Fi
 ![alt text](https://github.com/stalei/DIProject/blob/master/DataExtract2.png?raw=true)
 (Total Confirmed- Total Death- Growth Factor and Correlation - Death Ratio)
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;GF=\frac{\Delta N_{Today}}}{\Delta N{Yesterday}}" title="\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}" />
 
 
 In the next step I extract the growth factor(GF). GF is defined as the change today divided by the change yesterday. In theory if this number is above one we will see increase and if this number is below one we are moving to contain the spread and stop it so 1 is inflection point. 
