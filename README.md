@@ -10,7 +10,7 @@ Then add them together and plot the general trend for a given list of states. Fi
 ![alt text](https://github.com/stalei/DIProject/blob/master/DataExtract2.png?raw=true)
 (Total Confirmed- Total Death- Growth Factor and Correlation - Death Ratio)
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;GF=\frac{\DeltaN_{Today}}{\DeltaN_{Yesterday}}" title="\Large GF=\frac{N_{Today}}{N{Yesterday}}" />
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;GF=\frac{\Delta%20N_{Today}}{\Delta%20N_{Yesterday}}" title="\Large GF=\frac{N_{Today}}{N{Yesterday}}" />
 
 
 
