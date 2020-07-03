@@ -10,6 +10,12 @@ Then add them together and plot the general trend for a given list of states. Fi
 ![alt text](https://github.com/stalei/DIProject/blob/master/DataExtract2.png?raw=true)
 (Total Confirmed- Total Death- Growth Factor and Correlation - Death Ratio)
 
+markdown: kramdown
+
+kramdown:
+  input: GFM
+
+$x=5
 
 In the next step I extract the growth factor(GF). GF is defined as the change today divided by the change yesterday. In theory if this number is above one we will see increase and if this number is below one we are moving to contain the spread and stop it so 1 is inflection point. 
 Using this number we can study the pattern and in a long time we can perform a time series analysis. For example we can study the surge based on the growth factor at the time of reopening. I extract the growth factor then following the data I look at the number of new cases after two weeks from reopening. 
