@@ -10,12 +10,15 @@ Then add them together and plot the general trend for a given list of states. Fi
 ![alt text](https://github.com/stalei/DIProject/blob/master/DataExtract2.png?raw=true)
 (Total Confirmed- Total Death- Growth Factor and Correlation - Death Ratio)
 
+We can also plot positivity rate:
+![alt text](https://github.com/stalei/DIProject/blob/master/positivity.png?raw=true)
+
+
+
+In the next step I extract the growth factor(GF). GF is defined as the change today divided by the change yesterday.
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;GF=\frac{\Delta%20N_{today}}{\Delta%20N_{yesterday}}" title="\Large GF=\frac{N_{Today}}{N{Yesterday}}" />
 
-
-
-
-In the next step I extract the growth factor(GF). GF is defined as the change today divided by the change yesterday. In theory if this number is above one we will see increase and if this number is below one we are moving to contain the spread and stop it so 1 is inflection point. 
+In theory if this number is above one we will see increase and if this number is below one we are moving to contain the spread and stop it so 1 is inflection point. 
 Using this number we can study the pattern and in a long time we can perform a time series analysis. For example we can study the surge based on the growth factor at the time of reopening. I extract the growth factor then following the data I look at the number of new cases after two weeks from reopening. 
 But more important I plot growth factor change for all these states and we can compare it with the inflection point. I put the last growth factor in the legend. I was also interested to see if there is a weekly correlation in growth rate and I calculate autocorrelation of the growth factor. For these test states this correlation is very weak. Reopening time are taken from NYTimes reoprt:
 [https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html](https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html)
