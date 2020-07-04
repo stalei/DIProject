@@ -101,6 +101,16 @@ ax21.set_xlabel('Reopening growth factor')
 ax21.title.set_text('GrowthFactor')
 ax21.grid(True)
 
+fig3 = plt.figure(3,figsize=plt.figaspect(1))
+fig3.suptitle('COVID-19 - Positivity Rate of Tests')
+ax31 = fig3.add_subplot(111)
+ax31.set_ylabel('Positivity Rate (%)')
+ax31.set_xlabel('Days Ago')
+ax31.title.set_text('Positivity Rate')
+ax31.set_xlim(daycount-1, -3)
+ax31.set_ylim(0, 60)
+ax31.grid(True)
+
 j=0
 for state in StatesList:
     i=0
@@ -110,11 +120,14 @@ for state in StatesList:
     totDeath=[0]*daycount
     totRecovered=[0]*daycount
     GrowthFactorAll=[0]*daycount
+    positivityRateAll=[0]*daycount
     ## temporary variables to keep the values for each days
     totConfPrePreviousDay=0
     totConfPreviousDay=0
     GrowthFactor=0
     totConf=0
+    tested=0
+    testedPre=0
     print(state)
     print("Please wait...")
     # the main loop on all files
@@ -133,16 +146,25 @@ for state in StatesList:
         totConf=0;
         totRec=0;
         totD=0;
+        tested=0
         for row in csvdata:
             if row[0]==state: #because the data for US is also displayed for each states separately
                 totConf+=int(row[5])
                 totD+=int(row[6])
+                tested+=int(row[11])
                 #print(row[7])
                 #totRec+=int(row[7])
         #print(totConf,totRec,totD)
         totConfirmed[n]=totConf
         #totRecovered[n]=totRec
         totDeath[n]=totD
+        t=tested-testedPre
+        #if t !=0:
+        #   positivityRate=totConf/t
+        positivityRate=totConf/tested
+        #print("positivity:test=%d-conf=%d"%(t,totConf))
+        positivityRateAll[n]=round(positivityRate,2)*100
+        testedPre=tested
         if totConfPreviousDay - totConfPrePreviousDay !=0:
             GrowthFactor=(totConf-totConfPreviousDay)/(totConfPreviousDay-totConfPrePreviousDay)
         #print(GrowthFactor)
@@ -178,7 +200,7 @@ for state in StatesList:
     ax3.plot(daysaxis,np.log10(totDeath),'x',label=str(state))
     ax4.plot(daysaxis_1,GrowthFactorAll2,linestyle='-',label=str(state)+'='+str(round(GrowthFactor,2))+','+str(round(corr,2)))
     ax6.plot(daysaxis,np.divide(totDeath,totConfirmed),linestyle='-',label=str(state))
-
+    ax31.plot(daysaxis,positivityRateAll,linestyle='-',label=str(state))
 ##let's fit a function:
 initial_guess = [2000.0, 1.0]
 parameters,param_covariance=curve_fit(fit,OpeningGrowth,week2Increase,initial_guess)
@@ -195,6 +217,7 @@ ax4.legend(loc=1)
 #ax5.legend(loc=1)
 ax6.legend(loc=1)
 ax21.legend(loc=2)
+ax31.legend(loc=1)
 plt.show()
 
 g_in =float(input("Enter an opening growth rate to see the prediction: "))
