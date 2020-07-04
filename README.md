@@ -44,6 +44,17 @@ Sample output:
     Increase prediction is:5352
 
 
+We can also try cross-corellation and lag between confirmed cases and death:
+
+    Cross-Corellation:1.02575-lag:14
+    Alabama
+    Please wait...
+    Cross-Corellation:0.991008-lag:0
+    Florida
+    Please wait...
+    Cross-Corellation:0.990245-lag:0
+
+Cross-correlation is ~1. The lag for NY is 14 days but it gives 0 for AL and FL.
 
 This would be more challenging and more accurate if I include more states and in a real analysis we have to include more parameters however given the short time of the challenge and starting from scratch the result is very exciting and being an open source tool will let other people to reproduce the results and study more data.
 
