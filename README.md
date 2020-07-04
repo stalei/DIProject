@@ -16,6 +16,7 @@ We can also plot positivity rate:
 
 
 In the next step I extract the growth factor(GF). GF is defined as the change today divided by the change yesterday.
+
 <img src="https://latex.codecogs.com/svg.latex?\Large&space;GF=\frac{\Delta%20N_{today}}{\Delta%20N_{yesterday}}" title="\Large GF=\frac{N_{Today}}{N{Yesterday}}" />
 
 In theory if this number is above one we will see increase and if this number is below one we are moving to contain the spread and stop it so 1 is inflection point. 
