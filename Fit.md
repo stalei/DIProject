@@ -11,6 +11,8 @@ and will provide the increase two weeks after reopening.
  Reopening time are taken from NYTimes reoprt:
 [https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html](https://www.nytimes.com/interactive/2020/us/states-reopen-map-coronavirus.html)
 
+THIS PLOT IS FOR DEMONSTRATION PURPOSE ONLY. MORE DATA ANALYSIS IS REQUIRED ON MORE STATES AND THIS FUNCTION HAS A DIFFERENT FORM IN REALTY
+
 Using this fit we can start making predictions:
 Sample output:
 
