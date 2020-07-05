@@ -32,6 +32,7 @@ In the next step we can fit a function on this data and predict the surge rate a
 ![alt text](https://github.com/stalei/DIProject/blob/master/Fit.png?raw=true)
 
 (Surge vs Reopening Growth Factor)
+THIS PLOT IS FOR DEMONSTRATION PURPOSE ONLY. MORE DATA ANALYSIS IS REQUIRED ON MORE STATES AND THIS FUNCTION HAS A DIFFERENT FORM IN REALTY
 
 Sample output:
 
