@@ -10,5 +10,9 @@ Growth factor is important parameter for policy makers and I extract growth fact
 I also look ag the auto-corrolation with lag of 7 (weekly) but apparantly there is no strong correlation for given states. Last panel is the death ratio.
 
 
+
+We can also plot positivity rate:
+![alt text](https://github.com/stalei/DIProject/blob/master/positivity.png?raw=true)
+
 Link to full project:
 [https://github.com/stalei/DIProject](https://github.com/stalei/DIProject)
