@@ -3,6 +3,7 @@ Shahram Talei
 (DI.py)
 
 As a scientist I was thrilled by solving problems especially problems with a real life implication. The latest pandemic has had a devastating effects on societies and data analysis of the pandemic has been challenging and extremely important to stop the spread and recover our economy after we move out of the pandemic. We still don't have a complete picture of this phenomena so we can study the data and extract the correlations. I start this project with a code to scrape daily reports by John Hopkins university. 
+
 [https://github.com/CSSEGISandData/COVID-19](https://github.com/CSSEGISandData/COVID-19)
 
 Then add them together and plot the general trend for a given list of states. First I plot this data. Beside typical total confirmed cases and total death I plot the death ratio.
