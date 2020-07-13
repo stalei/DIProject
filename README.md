@@ -48,6 +48,8 @@ Sample output:
 
 We can also try cross-corellation and lag between confirmed cases and death:
 
+    New York
+    Please wait...
     Cross-Corellation:1.02575-lag:14
     Alabama
     Please wait...
