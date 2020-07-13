@@ -23,6 +23,38 @@ import datetime
 from scipy.optimize import minimize
 from scipy.optimize import curve_fit
 import pandas as pd
+from scipy import signal
+
+def cross_corr(y1, y2):
+  """Calculates the cross correlation and lags without normalization.
+
+  The definition of the discrete cross correlation is in:
+  https://www.mathworks.com/help/matlab/ref/xcorr.html
+
+  Args:
+    y1, y2: Should have the same length.
+
+  Returns:
+    max_corr: Maximum correlation without normalization.
+    lag: The lag in terms of the index.
+  """
+  if len(y1) != len(y2):
+    raise ValueError('The lengths of the inputs should be the same.')
+
+  y1_auto_corr = np.dot(y1, y1) / len(y1)
+  y2_auto_corr = np.dot(y2, y2) / len(y1)
+  corr = signal.correlate(y1, y2, mode='same')
+  # The unbiased sample size is N - lag.
+  unbiased_sample_size = signal.correlate(
+      np.ones(len(y1)), np.ones(len(y1)), mode='same')
+  corr = corr / unbiased_sample_size / np.sqrt(y1_auto_corr * y2_auto_corr)
+  shift = len(y1) // 2
+
+  max_corr = np.max(corr)
+  argmax_corr = np.argmax(corr)
+  return max_corr, argmax_corr - shift
+
+
 
 def fit(variables,d,m):
 	g=variables
@@ -117,6 +149,7 @@ for state in StatesList:
     w2=0
     ####### These are lists of the values for all days
     totConfirmed=[0]*daycount
+    Confirmed=[0]*daycount
     totDeath=[0]*daycount
     totRecovered=[0]*daycount
     GrowthFactorAll=[0]*daycount
@@ -173,18 +206,18 @@ for state in StatesList:
         #print(ReopeningDate[j])
         w2=ReopeningDate[j]+15
         if ReopeningDate[j]==n:
-            print("got the day")
+            #print("got the day")
             #print(n)
-            print(GrowthFactor)
-            print("Please wait...")
+            #print(GrowthFactor)
+            #print("Please wait...")
             #print(GrowthFactorAll[n])
             OpeningGrowth[j]=GrowthFactor
             t1=totConf
         elif w2==n:# n>w2 and n<w2+7: #w2==n:
-            print("got the w2 day")
+            #print("got the w2 day")
             #print(w2)
-            print(GrowthFactor)
-            print("Please wait...")
+            #print(GrowthFactor)
+            #print("Please wait...")
             Week2Growth[j]+=GrowthFactor
             t2=totConf
             week2Increase[j]=t2-t1
@@ -196,6 +229,12 @@ for state in StatesList:
     GrowthFactorAll2=GrowthFactorAll[1:daycount+2]
     ser = pd.Series(GrowthFactorAll2)
     corr=ser.autocorr(lag=7)
+    s2=pd.Series(totConfirmed)
+    s3=pd.Series(totDeath)
+    #corr2=s2.corr(s3)
+    #print(corr2)
+    corr2, lag = cross_corr(s3, s2)
+    print("Cross-Corollation:%g-lag:%g"%(corr2,lag))
     ax1.plot(daysaxis,np.log10(totConfirmed),'+',label=str(state))
     ax3.plot(daysaxis,np.log10(totDeath),'x',label=str(state))
     ax4.plot(daysaxis_1,GrowthFactorAll2,linestyle='-',label=str(state)+'='+str(round(GrowthFactor,2))+','+str(round(corr,2)))
