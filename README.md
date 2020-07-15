@@ -2,6 +2,8 @@
 Shahram Talei
 (DI.py)
 
+![alt text](https://github.com/stalei/DIProject/blob/master/science-mag.png?raw=true)
+
 As a scientist I was thrilled by solving problems especially problems with a real life implication. The latest pandemic has had a devastating effects on societies and data analysis of the pandemic has been challenging and extremely important to stop the spread and recover our economy after we move out of the pandemic. We still don't have a complete picture of this phenomena so we can study the data and extract the correlations. I start this project with a code to scrape daily reports by John Hopkins university. 
 
 [https://github.com/CSSEGISandData/COVID-19](https://github.com/CSSEGISandData/COVID-19)
@@ -65,6 +67,11 @@ This would be more challenging and more accurate if I include more states and in
 If I get a chance I would like to include model selection (minimum parameters using stepwise selection) and regularization and finally include unsupervised analysis (neural networks,...) for more accurate predictions.
 
 The code is written in a flexible way to include any list and fitting part is easy to change to any function. Basic python libraries + numpy + scipy + pandas + csv are required for the analysis.
+
+##Future works:
+- Include more states
+- Develop parallel version (MPI and/or CUDA), I have access to UAHPC and OZ-Star
+- Include more predictors
 
 Stay safe!
 
