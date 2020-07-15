@@ -68,7 +68,7 @@ If I get a chance I would like to include model selection (minimum parameters us
 
 The code is written in a flexible way to include any list and fitting part is easy to change to any function. Basic python libraries + numpy + scipy + pandas + csv are required for the analysis.
 
-##Future works:
+## Future works:
 - Include more states
 - Develop parallel version (MPI and/or CUDA), I have access to UAHPC and OZ-Star
 - Include more predictors
