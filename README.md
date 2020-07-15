@@ -2,7 +2,7 @@
 Shahram Talei
 (DI.py)
 
-![alt text](https://github.com/stalei/DIProject/blob/master/science-mag.png?raw=true)
+![alt text](https://github.com/stalei/DIProject/blob/master/scince-mag.png?raw=true)
 
 As a scientist I was thrilled by solving problems especially problems with a real life implication. The latest pandemic has had a devastating effects on societies and data analysis of the pandemic has been challenging and extremely important to stop the spread and recover our economy after we move out of the pandemic. We still don't have a complete picture of this phenomena so we can study the data and extract the correlations. I start this project with a code to scrape daily reports by John Hopkins university. 
 
