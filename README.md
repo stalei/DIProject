@@ -21,6 +21,18 @@ In theory if this number is above one we will see increase and if this number is
 Using this number we can study the pattern and in a long time we can perform a time series analysis. For example we can study the surge based on the growth factor at the time of reopening. I extract the growth factor then following the data I look at the number of new cases after two weeks from reopening. 
 
 
+We can also try cross-corellation and lag between confirmed cases and death:
+
+    New York
+    Please wait...
+    Cross-Corellation:1.02575-lag:14
+    Alabama
+    Please wait...
+    Cross-Corellation:0.991008-lag:0
+    Florida
+    Please wait...
+    Cross-Corellation:0.990245-lag:0
+
 We can also plot positivity rate:
 ![alt text](https://github.com/stalei/DIProject/blob/master/positivity.png?raw=true)
 
@@ -48,17 +60,6 @@ Sample output:
     Increase prediction is:5352
 
 
-We can also try cross-corellation and lag between confirmed cases and death:
-
-    New York
-    Please wait...
-    Cross-Corellation:1.02575-lag:14
-    Alabama
-    Please wait...
-    Cross-Corellation:0.991008-lag:0
-    Florida
-    Please wait...
-    Cross-Corellation:0.990245-lag:0
 
 Cross-correlation is ~1. The lag for NY is 14 days but it gives 0 for AL and FL.
 
